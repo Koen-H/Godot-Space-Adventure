@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://do3qfr40oski0"]
+[gd_scene load_steps=5 format=3 uid="uid://do3qfr40oski0"]
 
 [ext_resource type="Texture2D" uid="uid://c3fwg2ghwtbph" path="res://icon.svg" id="1_3mvip"]
 [ext_resource type="Script" path="res://RopeSegment.gd" id="1_vho5y"]
+[ext_resource type="Texture2D" uid="uid://bh77y5354gqln" path="res://sprites/tiles_packed.png" id="3_imk2h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4aco8"]
 radius = 4.0
@@ -18,8 +19,15 @@ position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_4aco8")
 
 [node name="Icon" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
 scale = Vector2(0.0546875, 0.161327)
 texture = ExtResource("1_3mvip")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+texture = ExtResource("3_imk2h")
+region_enabled = true
+region_rect = Rect2(162, 72, 18, 18)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
