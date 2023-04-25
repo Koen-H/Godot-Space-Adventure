@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dus0uyph5782u"]
+
+[ext_resource type="Script" path="res://scripts/CodeRope.gd" id="1_eg2kp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3755"]
+
+[node name="Node2D" type="RigidBody2D"]
+script = ExtResource("1_eg2kp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k3755")

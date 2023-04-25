@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://oekf3k2fpqyv"]
+
+[ext_resource type="Script" path="res://scripts/RopeSegment.gd" id="1_ec1b5"]
+[ext_resource type="Texture2D" uid="uid://c3fwg2ghwtbph" path="res://sprites/icon.svg" id="2_pjtvj"]
+[ext_resource type="Texture2D" uid="uid://bh77y5354gqln" path="res://sprites/tiles_packed.png" id="3_keh3j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4aco8"]
+radius = 4.0
+height = 22.0
+
+[node name="Ropesegment" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 8
+input_pickable = true
+script = ExtResource("1_ec1b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_4aco8")
+
+[node name="Icon" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+scale = Vector2(0.0546875, 0.161327)
+texture = ExtResource("2_pjtvj")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+texture = ExtResource("3_keh3j")
+region_enabled = true
+region_rect = Rect2(162, 72, 18, 18)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

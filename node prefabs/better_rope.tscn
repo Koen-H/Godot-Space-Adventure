@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg3fuohduxsij"]
+
+[ext_resource type="Script" path="res://scripts/better_rope.gd" id="1_rwus5"]
+[ext_resource type="Texture2D" uid="uid://b58wlvn0prej7" path="res://sprites/rope.png" id="2_33fxl"]
+
+[node name="BetterRope" type="DampedSpringJoint2D"]
+bias = 0.9
+rest_length = 1.0
+stiffness = 64.0
+damping = 0.01
+script = ExtResource("1_rwus5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_repeat = 2
+position = Vector2(0, 25)
+scale = Vector2(1, 0.52)
+texture = ExtResource("2_33fxl")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 100)
+
+[node name="Line2D" type="Line2D" parent="."]
