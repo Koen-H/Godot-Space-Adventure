@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://do3qfr40oski0"]
+
+[ext_resource type="Texture2D" uid="uid://c3fwg2ghwtbph" path="res://icon.svg" id="1_3mvip"]
+[ext_resource type="Script" path="res://RopeSegment.gd" id="1_vho5y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4aco8"]
+radius = 4.0
+height = 22.0
+
+[node name="Ropesegment" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 8
+input_pickable = true
+script = ExtResource("1_vho5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_4aco8")
+
+[node name="Icon" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.0546875, 0.161327)
+texture = ExtResource("1_3mvip")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

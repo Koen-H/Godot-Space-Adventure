@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2fvhhau72ybo"]
+
+[ext_resource type="Script" path="res://box.gd" id="1_ltrb2"]
+[ext_resource type="Texture2D" uid="uid://bh77y5354gqln" path="res://sprites/tiles_packed.png" id="1_oyklh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bylsa"]
+size = Vector2(18, 18)
+
+[node name="Box" type="RigidBody2D" groups=["rope-attacheable"]]
+z_index = 11
+collision_layer = 5
+input_pickable = true
+can_sleep = false
+freeze_mode = 1
+script = ExtResource("1_ltrb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_oyklh")
+region_enabled = true
+region_rect = Rect2(72, 90, 18, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bylsa")

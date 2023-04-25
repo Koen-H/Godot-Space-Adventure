@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjyhy7hb1gf4c"]
+
+[ext_resource type="Texture2D" uid="uid://bh77y5354gqln" path="res://sprites/tiles_packed.png" id="1_ixkan"]
+[ext_resource type="Script" path="res://coin.gd" id="1_v8mbd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g03ya"]
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_v8mbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g03ya")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2.38419e-07, 2.38419e-07)
+scale = Vector2(1.55556, 1.55556)
+texture = ExtResource("1_ixkan")
+region_enabled = true
+region_rect = Rect2(198, 126, 18, 18)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
